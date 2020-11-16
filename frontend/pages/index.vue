@@ -1,8 +1,9 @@
 <template>
-    <div class="container">
+    <main class="main home">
         <div>
             <Logo />
-            <h1 class="title">frontend</h1>
+            <h1 class="title">behind the code</h1>
+            <h2 class="subtitle">Coming soon</h2>
             <div class="links">
                 <a
                     href="https://nuxtjs.org/"
@@ -22,23 +23,14 @@
                 </a>
             </div>
         </div>
-    </div>
+    </main>
 </template>
 
 <script>
-export default {}
+export default {};
 </script>
 
-<style>
-.container {
-    margin: 0 auto;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
+<style lang="scss">
 .title {
     font-family: 'Quicksand', 'Source Sans Pro', -apple-system,
         BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
