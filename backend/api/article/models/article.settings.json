@@ -28,9 +28,12 @@
       "plugin": "upload",
       "required": true
     },
-    "category": {
-      "model": "category",
-      "via": "articles"
+    "subjects": {
+      "collection": "subject"
+    },
+    "resources": {
+      "via": "articles",
+      "collection": "resource"
     }
   }
 }
