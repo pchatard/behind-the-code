@@ -2,10 +2,6 @@ export default {
     // Target (https://go.nuxtjs.dev/config-target)
     target: 'static',
 
-    env: {
-        strapiBaseURL: process.env.API_URL || 'http://localhost:1337',
-    },
-
     // Global page headers (https://go.nuxtjs.dev/config-head)
     head: {
         title: 'Behind the code',
@@ -43,8 +39,19 @@ export default {
 
     // Axios module configuration (https://go.nuxtjs.dev/config-axios)
     axios: {
-        baseURL: process.env.strapiBaseURL,
+        baseURL: process.env.API_URL || 'http://localhost:1337',
     },
+
+    // publicRuntimeConfig: {
+    //     axios: {
+    //         browserBaseURL: process.env.strapiBaseURL,
+    //     },
+    // },
+    // privateRuntimeConfig: {
+    //     axios: {
+    //         browserBaseURL: process.env.strapiBaseURL,
+    //     },
+    // },
 
     // Build Configuration (https://go.nuxtjs.dev/config-build)
     build: {},

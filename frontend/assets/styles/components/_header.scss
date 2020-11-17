@@ -3,7 +3,6 @@
     position: fixed;
     top: 0;
     left: 0;
-    // border: 1px solid red;
     background-color: white;
     box-shadow: 0 2px 5px rgba($primary-color, 0.2);
 
@@ -37,6 +36,14 @@
         form {
             margin: 0 3rem;
             padding-bottom: 0.5rem;
+
+            #search {
+                // To be completed
+            }
+
+            button {
+                // To be completed
+            }
         }
 
         ul {
@@ -48,9 +55,15 @@
                 margin: 3rem;
                 padding: 1rem 0;
                 border-bottom: 2px solid transparent;
+                font-size: 1.8rem;
+                font-weight: 600;
 
                 &:hover {
                     border-color: $primary-color;
+                }
+
+                .nuxt-link-exact-active {
+                    color: $primary-color;
                 }
             }
         }
