@@ -1,8 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "categories",
+  "collectionName": "subjects",
   "info": {
-    "name": "category",
+    "name": "subject",
     "description": ""
   },
   "options": {
@@ -11,14 +11,14 @@
     "draftAndPublish": false
   },
   "attributes": {
-    "name": {
+    "title": {
       "type": "string",
       "required": true,
       "unique": true
     },
-    "subjects": {
-      "via": "category",
-      "collection": "subject"
+    "category": {
+      "model": "category",
+      "via": "subjects"
     }
   }
 }
