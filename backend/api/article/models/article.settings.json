@@ -26,14 +26,18 @@
         "images"
       ],
       "plugin": "upload",
-      "required": true
+      "required": false
     },
     "subjects": {
       "collection": "subject"
     },
     "resources": {
-      "via": "articles",
-      "collection": "resource"
+      "collection": "resource",
+      "via": "articles"
+    },
+    "category": {
+      "model": "category",
+      "via": "articles"
     }
   }
 }

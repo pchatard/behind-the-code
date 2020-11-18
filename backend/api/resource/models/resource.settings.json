@@ -20,8 +20,8 @@
       "required": true
     },
     "articles": {
-      "collection": "article",
       "via": "resources",
+      "collection": "article",
       "dominant": true
     }
   }

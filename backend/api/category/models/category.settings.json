@@ -17,8 +17,21 @@
       "unique": true
     },
     "subjects": {
+      "collection": "subject",
+      "via": "category"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true
+    },
+    "articles": {
       "via": "category",
-      "collection": "subject"
+      "collection": "article"
     }
   }
 }
