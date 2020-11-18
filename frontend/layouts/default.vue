@@ -1,19 +1,29 @@
 <template>
     <div class="default__layout">
         <Header :categories="categories" />
-        <Nuxt />
+        <Nuxt :articles="articles" />
     </div>
 </template>
 
 <script>
+import { mapActions, mapGetters } from 'vuex';
+
 export default {
     async fetch() {
-        this.categories = await this.$axios.$get('/categories');
+        await this.getCategories();
+        await this.getArticles();
     },
-    data() {
-        return {
-            categories: [],
-        };
+    computed: {
+        ...mapGetters({
+            categories: 'categories/categories',
+            articles: 'articles/articles',
+        }),
+    },
+    methods: {
+        ...mapActions({
+            getCategories: 'categories/getCategories',
+            getArticles: 'articles/getArticles',
+        }),
     },
 };
 </script>
