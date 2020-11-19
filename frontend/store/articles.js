@@ -13,6 +13,11 @@ const actions = {
                     .join(`${process.env.strapiBaseUrl}/uploads`)
             ),
         }));
+        articles.sort((a, b) => {
+            const aDate = new Date(a.published_at).getTime();
+            const bDate = new Date(b.published_at).getTime();
+            return bDate - aDate;
+        });
         commit('populateArticles', await articles);
     },
 };
