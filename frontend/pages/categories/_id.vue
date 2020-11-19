@@ -1,41 +1,56 @@
 <template>
-    <main class="main category">
-        <h1>{{ category.name }}</h1>
-        <img :src="formatedUrl" alt="" />
-        <h2>Subjects</h2>
-        <ul>
-            <li v-for="subject in category.subjects" :key="subject.id">
-                {{ subject.title }}
-            </li>
-        </ul>
-        <h2>Articles</h2>
-        <ul>
-            <li v-for="article in category.articles" :key="article.id">
-                <NuxtLink :to="'/article/' + article.id">
-                    {{ article.title }}
-                </NuxtLink>
-            </li>
-        </ul>
+    <main class="category">
+        <h1 class="category__title">
+            {{ category.name }}
+        </h1>
+        <div class="category__links">
+            <div class="articles">
+                <h2>Latest Articles</h2>
+                <ul>
+                    <li
+                        v-for="article in category.articles"
+                        :key="article.id"
+                        class="article"
+                    >
+                        <NuxtLink :to="'/articles/' + article.id">
+                            {{ article.title }}
+                        </NuxtLink>
+                    </li>
+                </ul>
+            </div>
+            <div class="subjects">
+                <h2>Subjects</h2>
+                <ul>
+                    <li
+                        v-for="subject in category.subjects"
+                        :key="subject.id"
+                        class="subject__li"
+                    >
+                        <NuxtLink
+                            :to="'/subjects/' + subject.id"
+                            class="subject__link"
+                        >
+                            {{ subject.title }}
+                        </NuxtLink>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </main>
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
-
 export default {
     data() {
         return {
-            apiUrl: process.env.strapiBaseUrl,
             id: this.$route.params.id,
         };
     },
     computed: {
-        ...mapGetters({ categoryId: 'categories/categoryId' }),
         category() {
-            return this.categoryId(this.id);
-        },
-        formatedUrl() {
-            return this.apiUrl + this.category.image.formats.large.url;
+            return this.$store.state.categories.list.find(
+                (cat) => cat.id === parseInt(this.id)
+            );
         },
     },
 };

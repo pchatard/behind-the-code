@@ -1,26 +1,25 @@
 const state = () => ({
-    articles: [],
+    list: [],
 });
-
-const getters = {
-    articles: (state) => state.articles,
-    articleId: (state) => (id) => {
-        return state.articles.find((art) => {
-            return art.id === parseInt(id);
-        });
-    },
-};
 
 const actions = {
     async getArticles({ commit }) {
-        const articles = await this.$axios.$get('/articles');
-        commit('populateArticles', articles);
+        const rawArticles = await this.$axios.$get('/articles');
+        const articles = (await rawArticles).map((article) => ({
+            ...article,
+            content: this.$md.render(
+                article.content
+                    .split('/uploads')
+                    .join(`${process.env.strapiBaseUrl}/uploads`)
+            ),
+        }));
+        commit('populateArticles', await articles);
     },
 };
 const mutations = {
     populateArticles(state, articles) {
-        state.articles = articles;
+        state.list = articles;
     },
 };
 
-export default { state, getters, actions, mutations };
+export default { state, actions, mutations };

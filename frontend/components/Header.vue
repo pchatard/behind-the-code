@@ -12,7 +12,7 @@
                 </form>
                 <ul>
                     <li v-for="category in categories" :key="category.id">
-                        <NuxtLink :to="'/category/' + category.id">
+                        <NuxtLink :to="'/categories/' + category.id">
                             {{ category.name }}
                         </NuxtLink>
                     </li>

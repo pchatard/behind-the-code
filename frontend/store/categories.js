@@ -1,13 +1,4 @@
-const state = () => ({ categories: [] });
-
-const getters = {
-    categories: (state) => state.categories,
-    categoryId: (state) => (id) => {
-        return state.categories.find((cat) => {
-            return cat.id === parseInt(id);
-        });
-    },
-};
+const state = () => ({ list: [] });
 
 const actions = {
     async getCategories({ commit }) {
@@ -17,8 +8,8 @@ const actions = {
 };
 const mutations = {
     populateCategories(state, categories) {
-        state.categories = categories;
+        state.list = categories;
     },
 };
 
-export default { state, getters, actions, mutations };
+export default { state, actions, mutations };

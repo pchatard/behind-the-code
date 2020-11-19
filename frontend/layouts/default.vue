@@ -1,12 +1,12 @@
 <template>
     <div class="default__layout">
         <Header :categories="categories" />
-        <Nuxt :articles="articles" />
+        <Nuxt />
     </div>
 </template>
 
 <script>
-import { mapActions, mapGetters } from 'vuex';
+import { mapActions } from 'vuex';
 
 export default {
     async fetch() {
@@ -14,10 +14,9 @@ export default {
         await this.getArticles();
     },
     computed: {
-        ...mapGetters({
-            categories: 'categories/categories',
-            articles: 'articles/articles',
-        }),
+        categories() {
+            return this.$store.state.categories.list;
+        },
     },
     methods: {
         ...mapActions({
