@@ -20,18 +20,9 @@
       "collection": "subject",
       "via": "category"
     },
-    "image": {
-      "model": "file",
-      "via": "related",
-      "allowedTypes": [
-        "images"
-      ],
-      "plugin": "upload",
-      "required": true
-    },
     "articles": {
-      "via": "category",
-      "collection": "article"
+      "collection": "article",
+      "via": "category"
     }
   }
 }

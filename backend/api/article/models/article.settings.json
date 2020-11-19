@@ -36,8 +36,12 @@
       "via": "articles"
     },
     "category": {
-      "model": "category",
-      "via": "articles"
+      "via": "articles",
+      "model": "category"
+    },
+    "preview": {
+      "type": "text",
+      "required": true
     }
   }
 }
