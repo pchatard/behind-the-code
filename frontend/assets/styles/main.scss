@@ -1,10 +1,13 @@
 @import './abstracts/variables';
+@import './abstracts/mixins';
 
 @import './base/base';
 @import './base/animations';
 
 @import './components/header';
 @import './components/hamburger';
+@import './components/articlePreview';
 
-@import './pages/article.scss';
-@import './pages/category.scss';
+@import './pages/homepage';
+@import './pages/article';
+@import './pages/category';

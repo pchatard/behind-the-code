@@ -1,11 +1,5 @@
 main.category {
-    padding-top: 8rem;
-    margin: 0 auto;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    @include pageSetup;
     position: relative;
 
     .category {
@@ -13,17 +7,11 @@ main.category {
             z-index: 5;
             width: 100%;
             height: 15vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            @include flex(center, center);
             font-size: 5rem;
             position: sticky;
             background-color: white;
             top: 8rem;
-
-            &:hover + .category__container img {
-                transform: scale(1.1);
-            }
         }
 
         &__links {
@@ -31,28 +19,22 @@ main.category {
             background: linear-gradient(
                 90deg,
                 rgba($secondary-color, 1) 25%,
-                rgba(white, 1) 50%,
                 rgba($primary-color, 1) 75%
             );
 
             & > div {
                 width: 100%;
-                max-width: 144rem;
+                @include maxWidth;
                 margin: 0 auto;
-                padding: 0 5rem;
-                display: flex;
-                height: 20vh;
-                min-height: 20rem;
-                align-items: stretch;
+                padding: 1rem 5rem;
+                @include flex($align: stretch);
                 overflow: hidden;
             }
 
             .subjects,
             .articles {
                 flex: 1;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
+                @include flex($align: center, $direction: column);
 
                 h2 {
                     font-size: 3.5rem;
@@ -65,7 +47,7 @@ main.category {
                 ul {
                     flex: 3;
                     list-style: none;
-                    display: flex;
+                    // display: flex;
                 }
             }
 
@@ -77,12 +59,9 @@ main.category {
                 }
 
                 ul {
-                    flex-wrap: wrap;
+                    @include flex(flex-end, center, row, wrap);
                     width: 100%;
                     overflow: hidden;
-                    align-items: center;
-                    justify-content: flex-end;
-                    flex-direction: row;
 
                     li {
                         &.subject__li {
@@ -115,8 +94,8 @@ main.category {
                 }
 
                 ul {
-                    flex-direction: column;
-                    justify-content: center;
+                    @include flex(center, $direction: column);
+
                     text-align: left;
                     width: 70%;
                     align-self: flex-start;
@@ -154,70 +133,13 @@ main.category {
         }
 
         &__articles {
-            max-width: 144rem;
+            margin: 0 auto;
+            @include maxWidth;
             width: 100%;
             padding: 5rem;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             column-gap: 5rem;
-
-            .preview {
-                border: 2px solid rgba($primary-color, 0.5);
-                box-shadow: 0 0 5px rgba(black, 0.2);
-                border-radius: 5px;
-                padding: 2rem;
-                text-align: left;
-
-                &__img {
-                    border-radius: 3px;
-                    height: 15rem;
-                    width: 100%;
-                    object-fit: cover;
-                }
-
-                &__title {
-                    font-size: 2.5rem;
-                    margin-top: 1rem;
-                }
-
-                &__subjects {
-                    margin-top: 0.5rem;
-                    display: flex;
-                    align-items: center;
-                }
-
-                &__subject {
-                    font-size: 1.4rem;
-                    width: fit-content;
-                    background-color: white;
-                    box-shadow: 1px 1px 2px rgba($secondary-color, 0.5);
-                    padding: 0.4rem 0.8rem;
-                    border-radius: 5px;
-                    margin-right: 1rem;
-                }
-
-                &__text {
-                    margin-top: 1.6rem;
-                    color: rgba(black, 0.8);
-                }
-
-                &__cta {
-                    margin-top: 2rem;
-                    width: 40%;
-                    background-color: $secondary-color;
-                    text-align: center;
-                    color: white;
-                    text-decoration: none;
-                    box-shadow: 1px 1px 2px rgba($secondary-color, 0.5);
-                    padding: 0.8rem 1.6rem;
-                    border-radius: 5px;
-                    float: right;
-
-                    &:hover {
-                        background-color: rgba($secondary-color, 0.9);
-                    }
-                }
-            }
         }
     }
 }

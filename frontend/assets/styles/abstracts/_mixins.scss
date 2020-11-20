@@ -1,0 +1,23 @@
+@mixin flex(
+    $justify: flex-start,
+    $align: flex-start,
+    $direction: row,
+    $wrap: nowrap
+) {
+    display: flex;
+    flex-flow: $direction $wrap;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+// Max-width 144rem
+@mixin maxWidth($width: 144rem) {
+    max-width: $width;
+}
+
+// Page container
+@mixin pageSetup($marginTop: 0, $paddingSide: 0) {
+    min-height: 100vh;
+    padding: 8rem $paddingSide 0 $paddingSide;
+    margin: $marginTop auto;
+}

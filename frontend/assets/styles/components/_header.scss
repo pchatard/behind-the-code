@@ -11,9 +11,7 @@
         max-width: 144rem;
         height: 8rem;
         padding: 0 5rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include flex(space-between, center);
         margin: 0 auto;
     }
 
@@ -31,8 +29,7 @@
     }
 
     &__navbar {
-        display: flex;
-        align-items: center;
+        @include flex($align: center);
 
         form {
             margin: 0 3rem;
@@ -49,8 +46,7 @@
 
         ul {
             list-style: none;
-            display: flex;
-            align-items: center;
+            @include flex($align: center);
 
             li {
                 margin: 3rem;

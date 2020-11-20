@@ -12,6 +12,7 @@ export default {
     async fetch() {
         await this.getCategories();
         await this.getArticles();
+        await this.getSubjects();
     },
     computed: {
         categories() {
@@ -22,6 +23,7 @@ export default {
         ...mapActions({
             getCategories: 'categories/getCategories',
             getArticles: 'articles/getArticles',
+            getSubjects: 'subjects/getSubjects',
         }),
     },
 };

@@ -9,9 +9,7 @@
         cursor: pointer;
         width: 4.5rem;
         padding: 0.5rem 0.5rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        @include flex(center, $direction: column);
 
         &__line {
             position: relative;

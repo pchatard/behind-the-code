@@ -1,56 +1,29 @@
 <template>
-    <main class="main home">
-        <div>
-            <Logo />
-            <h1 class="title">behind the code</h1>
-            <h2 class="subtitle">Coming soon</h2>
-            <div class="links">
-                <a
-                    href="https://nuxtjs.org/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="button--green"
-                >
-                    Documentation
-                </a>
-                <a
-                    href="https://github.com/nuxt/nuxt.js"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="button--grey"
-                >
-                    GitHub
-                </a>
+    <main class="home">
+        <h1 class="title"><Logo /> behind the code</h1>
+        <section class="links">
+            <span>Browse by</span>
+            <div class="links__container">
+                <NuxtLink to="/categories" class="link"> Categories </NuxtLink>
+                <NuxtLink to="/subjects" class="link"> Subjects </NuxtLink>
             </div>
-        </div>
+        </section>
+        <section class="articles">
+            <Article
+                v-for="article in articles"
+                :key="article.id"
+                :article="article"
+            />
+        </section>
     </main>
 </template>
 
 <script>
-export default {};
+export default {
+    computed: {
+        articles() {
+            return this.$store.state.articles.list;
+        },
+    },
+};
 </script>
-
-<style lang="scss">
-.title {
-    font-family: 'Quicksand', 'Source Sans Pro', -apple-system,
-        BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
-        sans-serif;
-    display: block;
-    font-weight: 300;
-    font-size: 100px;
-    color: #35495e;
-    letter-spacing: 1px;
-}
-
-.subtitle {
-    font-weight: 300;
-    font-size: 42px;
-    color: #526488;
-    word-spacing: 5px;
-    padding-bottom: 15px;
-}
-
-.links {
-    padding-top: 15px;
-}
-</style>
