@@ -1,5 +1,6 @@
 <template>
     <div class="preview">
+        <!-- Create an ArticleImage component -->
         <img
             v-show="article.image"
             :src="formatedImageUrl"
@@ -10,6 +11,7 @@
             {{ article.title }}
         </h3>
         <div class="preview__subjects">
+            <!-- Turn this span into a SubjectLink -->
             <span
                 v-for="subject in article.subjects"
                 :key="subject.id"
@@ -18,9 +20,11 @@
                 {{ subject.title }}
             </span>
         </div>
+        <!-- Create a ArticlePreviewtext component -->
         <p class="preview__text">
             {{ article.preview || 'Preview coming soon...' }}
         </p>
+        <!-- Change this into a proper component -->
         <NuxtLink :to="'/articles/' + article.id" class="preview__cta">
             Read
         </NuxtLink>
@@ -29,7 +33,6 @@
 
 <script>
 export default {
-    name: 'Article',
     props: {
         article: {
             default: () => ({}),

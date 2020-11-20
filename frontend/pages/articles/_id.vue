@@ -1,7 +1,7 @@
 <template>
     <article class="article">
         <h1 class="article__title">{{ article.title }}</h1>
-        <Author :published-date="article.published_at" />
+        <ArticleInfo :published-date="article.published_at" />
         <div class="article__subjects">
             <SubjectLink
                 v-for="subject in article.subjects"
@@ -12,6 +12,7 @@
 
         <section>
             <div class="content" v-html="article.content"></div>
+            <!-- Create ResourceContainer and ResourceList components -->
             <aside class="resources">
                 <h3 class="resources__title">Sources and useful links</h3>
                 <ol>
@@ -19,7 +20,7 @@
                         v-for="resource in article.resources"
                         :key="resource.id"
                     >
-                        <Resource :resource="resource" />
+                        <ArticleResource :resource="resource" />
                     </li>
                 </ol>
             </aside>
@@ -28,13 +29,15 @@
 </template>
 
 <script>
-import SubjectLink from '@/components/ArticlePage/SubjectLink';
-import Resource from '@/components/ArticlePage/Resource';
+import SubjectLink from '@/components/SubjectLink';
+import ArticleResource from '@/components/ArticleResource';
+import ArticleInfo from '@/components/ArticleInfo';
 
 export default {
     components: {
         SubjectLink,
-        Resource,
+        ArticleResource,
+        ArticleInfo,
     },
     data() {
         return {

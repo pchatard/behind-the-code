@@ -8,7 +8,7 @@
 export default {
     props: {
         publishedDate: {
-            default: () => '',
+            default: () => new Date(),
             type: String,
         },
     },

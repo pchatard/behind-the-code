@@ -3,8 +3,10 @@
         <h1 class="category__title">
             {{ category.name }}
         </h1>
+        <!-- Use Banner component -->
         <section class="category__links">
             <div>
+                <!-- Create a component here -->
                 <div class="articles">
                     <h2>Latest Articles</h2>
                     <ul v-if="latestArticles.length">
@@ -27,6 +29,8 @@
                         </li>
                     </ul>
                 </div>
+
+                <!-- And another one here -->
                 <div class="subjects">
                     <h2>Subjects</h2>
                     <ul>
@@ -43,8 +47,9 @@
                 </div>
             </div>
         </section>
+
         <section class="category__articles">
-            <Article
+            <ArticlePreview
                 v-for="article in filteredArticles"
                 :key="article.id"
                 :article="article"
@@ -54,7 +59,12 @@
 </template>
 
 <script>
+import ArticlePreview from '@/components/ArticlePreview';
+
 export default {
+    components: {
+        ArticlePreview,
+    },
     asyncData({ query }) {
         return {
             subjectQuery: query.subjects || {},

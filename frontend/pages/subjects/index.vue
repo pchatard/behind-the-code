@@ -2,7 +2,7 @@
     <main class="subjects">
         <h1 class="subjects__title">Subjects</h1>
         <div class="subjects__list">
-            <Subject
+            <SubjectListLink
                 v-for="subject in subjects"
                 :key="subject.id"
                 :subject="subject"
@@ -12,7 +12,10 @@
 </template>
 
 <script>
+import SubjectListLink from '@/components/SubjectlistLink';
+
 export default {
+    components: { SubjectListLink },
     computed: {
         subjects() {
             return this.$store.state.subjects.list;
