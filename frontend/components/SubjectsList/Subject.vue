@@ -1,7 +1,7 @@
 <template>
     <NuxtLink
-        :to="'/categories/' + subject.category + '?subjects=' + subject.id"
-        class="subject"
+        :to="`/categories/${subject.category.id}?subjects=${subject.id}`"
+        class="sub__link"
     >
         {{ subject.title }}
     </NuxtLink>
@@ -9,7 +9,7 @@
 
 <script>
 export default {
-    name: 'SubjectLink',
+    name: 'Subject',
     props: {
         subject: {
             default: () => ({}),

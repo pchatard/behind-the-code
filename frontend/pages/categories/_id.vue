@@ -34,7 +34,7 @@
                             v-for="subject in category.subjects"
                             :key="subject.id"
                             class="subject__li"
-                            :class="{ active: filterIds.includes(subject.id) }"
+                            :class="{ active: subjectIds.includes(subject.id) }"
                             @click="filterArticles(subject.id)"
                         >
                             {{ subject.title }}
@@ -55,10 +55,14 @@
 
 <script>
 export default {
+    asyncData({ query }) {
+        return {
+            subjectQuery: query.subjects || {},
+        };
+    },
     data() {
         return {
             id: this.$route.params.id,
-            filterIds: [],
         };
     },
     computed: {
@@ -78,12 +82,12 @@ export default {
             return articles;
         },
         filteredArticles() {
-            if (!this.filterIds.length) {
+            if (!this.subjectIds.length) {
                 return this.articles;
             }
             const filteredArray = this.articles.filter((article) => {
                 const index = article.subjects.findIndex((sub) =>
-                    this.filterIds.includes(sub.id)
+                    this.subjectIds.includes(sub.id)
                 );
                 if (index === -1) {
                     return false;
@@ -92,16 +96,34 @@ export default {
             });
             return filteredArray;
         },
+        subjectIds() {
+            if (
+                Object.keys(this.subjectQuery).length === 0 &&
+                this.subjectQuery.constructor === Object
+            ) {
+                return [];
+            }
+            return this.subjectQuery.split(',').map((id) => parseInt(id));
+        },
     },
+    watchQuery: ['subjects'],
     methods: {
         filterArticles(id) {
-            if (this.filterIds.includes(id)) {
-                const index = this.filterIds.findIndex(
+            if (this.subjectIds.includes(id)) {
+                const index = this.subjectIds.findIndex(
                     (filterId) => filterId === id
                 );
-                this.filterIds.splice(index, 1);
+                this.subjectIds.splice(index, 1);
+                this.$router.push({
+                    path: this.$route.path,
+                    query: { subjects: [...this.subjectIds].join(',') },
+                });
             } else {
-                this.filterIds.push(id);
+                this.subjectIds.push(id);
+                this.$router.push({
+                    path: this.$route.path,
+                    query: { subjects: [...this.subjectIds].join(',') },
+                });
             }
         },
     },

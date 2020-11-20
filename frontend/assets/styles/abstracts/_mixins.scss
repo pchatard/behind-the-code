@@ -21,3 +21,15 @@
     padding: 8rem $paddingSide 0 $paddingSide;
     margin: $marginTop auto;
 }
+
+@mixin tablet {
+    @media screen and (max-width: 900px) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media screen and (max-width: 600px) {
+        @content;
+    }
+}
