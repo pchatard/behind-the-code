@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap');
+@font-face {
+    font-family: 'Cunia';
+    display: swap;
+    src: url('~assets/fonts/Cunia.otf') format('truetype');
+}
+@font-face {
+    font-family: 'Reglo';
+    display: swap;
+    src: url('~assets/fonts/Reglo-Bold.otf') format('truetype');
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Open Sans', Roboto, sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+}
+
+h1 {
+    font-family: 'Cunia';
+    font-size: 5rem;
+}
+
+h2 {
+    font-family: 'Reglo';
+    font-size: 2.5rem;
+}
+
+h3 {
+    font-family: 'Reglo';
+    font-size: 2rem;
+}

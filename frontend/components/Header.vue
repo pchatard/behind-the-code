@@ -6,10 +6,10 @@
             </NuxtLink>
 
             <nav v-show="showNavbar" class="header__navbar">
-                <form>
+                <!-- <form>
                     <input id="search" type="search" />
                     <button type="submit">Search</button>
-                </form>
+                </form> -->
                 <ul>
                     <li v-for="category in categories" :key="category.id">
                         <NuxtLink :to="'/categories/' + category.id">

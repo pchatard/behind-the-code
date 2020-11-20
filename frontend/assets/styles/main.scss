@@ -2,6 +2,7 @@
 @import './abstracts/mixins';
 
 @import './base/base';
+@import './base/typography';
 @import './base/animations';
 
 @import './components/header';
@@ -11,4 +12,5 @@
 @import './pages/homepage';
 @import './pages/article';
 @import './pages/category';
-@import './pages/subject';
+@import './pages/subjects';
+@import './pages/categories';

@@ -9,9 +9,6 @@ main.category {
             height: 15vh;
             @include flex(center, center);
             font-size: 5rem;
-            position: sticky;
-            background-color: white;
-            top: 8rem;
         }
 
         &__links {

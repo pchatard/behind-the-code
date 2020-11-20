@@ -4,6 +4,7 @@
     border-radius: 5px;
     padding: 2rem;
     text-align: left;
+    @include flex($direction: column);
 
     &__img {
         border-radius: 3px;
@@ -34,13 +35,14 @@
     }
 
     &__text {
-        margin-top: 1.6rem;
+        margin: 1.6rem 0;
         color: rgba(black, 0.8);
     }
 
     &__cta {
-        margin-top: 2rem;
-        width: 40%;
+        font-family: 'Cunia';
+        margin-top: auto;
+        width: 100%;
         background-color: $secondary-color;
         text-align: center;
         color: white;
@@ -48,7 +50,6 @@
         box-shadow: 1px 1px 2px rgba($secondary-color, 0.5);
         padding: 0.8rem 1.6rem;
         border-radius: 5px;
-        float: right;
 
         &:hover {
             background-color: rgba($secondary-color, 0.9);

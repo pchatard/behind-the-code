@@ -1,11 +1,12 @@
 <template>
     <main class="home">
-        <h1 class="title"><Logo /> behind the code</h1>
+        <h2>Welcome to</h2>
+        <h1 class="title">behind the code</h1>
         <section class="links">
-            <span>Browse by</span>
+            <span>Browse articles by</span>
             <div class="links__container">
-                <NuxtLink to="/categories" class="link"> Categories </NuxtLink>
-                <NuxtLink to="/subjects" class="link"> Subjects </NuxtLink>
+                <NuxtLink to="/categories" class="link"> Category </NuxtLink>
+                <NuxtLink to="/subjects" class="link"> Subject </NuxtLink>
             </div>
         </section>
         <section class="articles">

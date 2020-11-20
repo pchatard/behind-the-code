@@ -1,6 +1,7 @@
 <template>
     <article class="article">
         <h1 class="article__title">{{ article.title }}</h1>
+        <Author :published-date="article.published_at" />
         <div class="article__subjects">
             <SubjectLink
                 v-for="subject in article.subjects"
@@ -8,6 +9,7 @@
                 :subject="subject"
             />
         </div>
+
         <section>
             <div class="content" v-html="article.content"></div>
             <aside class="resources">

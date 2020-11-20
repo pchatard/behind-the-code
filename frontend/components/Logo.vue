@@ -1,5 +1,5 @@
 <template>
-    <img src="@/static/favicon.png" alt="" />
+    <img src="~assets/logo-big.png" alt="" />
 </template>
 
 <style>

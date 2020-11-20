@@ -5,14 +5,16 @@ article.article {
 
     .article {
         &__title {
-            font-size: 5rem;
-            text-transform: uppercase;
+            // font-size: 5rem;
+            // text-transform: uppercase;
             text-align: left;
+            padding-left: 10rem;
         }
 
         &__subjects {
             @include flex;
             margin: 1rem 0;
+            padding-left: 10rem;
 
             .subject {
                 padding: 0.8rem;
@@ -27,16 +29,21 @@ article.article {
                 }
             }
         }
+
+        &__info {
+            padding-left: 10rem;
+        }
     }
 
     section {
-        @include flex;
+        @include flex(space-between);
         margin-top: 5rem;
 
         .content {
+            // padding-right: 2.5rem;
+            padding: 0 10rem;
             text-align: center;
             width: 75%;
-            padding-right: 2.5rem;
             z-index: 0;
 
             * {
@@ -60,7 +67,7 @@ article.article {
         }
 
         .resources {
-            width: 25%;
+            width: 20%;
             box-shadow: 0 0 5px rgba($primary-color, 0.5);
             background-color: rgba($primary-color, 0.05);
             border-radius: 10px;
