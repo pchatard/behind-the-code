@@ -1,7 +1,7 @@
 <template>
     <NuxtLink
         :to="'/categories/' + subject.category + '?subjects=' + subject.id"
-        class="subject"
+        class="subject-link"
     >
         {{ subject.title }}
     </NuxtLink>

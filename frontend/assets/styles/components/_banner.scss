@@ -1,0 +1,9 @@
+.banner {
+    width: 100%;
+    padding: 1rem 0;
+    background: linear-gradient(
+        90deg,
+        $secondary-color 0%,
+        $primary-color 100%
+    );
+}

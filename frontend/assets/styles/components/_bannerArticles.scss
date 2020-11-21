@@ -1,0 +1,30 @@
+.banner__articles {
+    @include flex($direction: column);
+
+    .list {
+        @include flex(center, $direction: column);
+        width: 70%;
+
+        &__item {
+            padding-bottom: 0.5rem;
+            width: fit-content;
+            border-bottom: 2px solid transparent;
+
+            &:first-of-type {
+                margin-bottom: 0.5rem;
+            }
+
+            &:hover {
+                border-bottom: 2px solid white;
+            }
+
+            .article__link {
+                color: white;
+            }
+
+            .empty {
+                color: white;
+            }
+        }
+    }
+}

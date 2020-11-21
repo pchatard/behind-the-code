@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import SubjectListLink from '@/components/SubjectlistLink';
+import SubjectListLink from '@/components/SubjectListLink';
 
 export default {
     components: { SubjectListLink },

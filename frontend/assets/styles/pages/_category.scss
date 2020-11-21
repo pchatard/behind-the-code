@@ -1,142 +1,41 @@
 main.category {
     @include pageSetup;
-    position: relative;
 
     .category {
         &__title {
-            z-index: 5;
-            width: 100%;
-            height: 15vh;
             @include flex(center, center);
-            font-size: 5rem;
-        }
-
-        &__links {
-            width: 100%;
-            background: linear-gradient(
-                90deg,
-                rgba($secondary-color, 1) 25%,
-                rgba($primary-color, 1) 75%
-            );
-
-            & > div {
-                width: 100%;
-                @include maxWidth;
-                margin: 0 auto;
-                padding: 1rem 5rem;
-                @include flex($align: stretch);
-                overflow: hidden;
-            }
-
-            .subjects,
-            .articles {
-                flex: 1;
-                @include flex($align: center, $direction: column);
-
-                h2 {
-                    font-size: 3.5rem;
-                    padding: 1rem 0;
-                    flex: 1;
-                    color: white;
-                    text-shadow: 0 0 5px rgba(black, 0.5);
-                }
-
-                ul {
-                    flex: 3;
-                    list-style: none;
-                    // display: flex;
-                }
-            }
-
-            .subjects {
-                h2 {
-                    align-self: flex-end;
-                    text-align: right;
-                    width: 100%;
-                }
-
-                ul {
-                    @include flex(flex-end, center, row, wrap);
-                    width: 100%;
-                    overflow: hidden;
-
-                    li {
-                        &.subject__li {
-                            width: fit-content;
-                            background-color: white;
-                            box-shadow: 0 0 2px rgba(black, 0.5);
-                            padding: 0.6rem 1.2rem;
-                            border-radius: 5px;
-                            margin: 0rem 1rem;
-                            border: 2px solid transparent;
-                            cursor: pointer;
-
-                            &:hover {
-                                border: 2px solid $secondary-color;
-                            }
-                        }
-
-                        &.active {
-                            border: 2px solid $secondary-color;
-                        }
-                    }
-                }
-            }
-
-            .articles {
-                h2 {
-                    align-self: flex-start;
-                    text-align: left;
-                    width: 70%;
-                }
-
-                ul {
-                    @include flex(center, $direction: column);
-
-                    text-align: left;
-                    width: 70%;
-                    align-self: flex-start;
-
-                    li {
-                        &.article {
-                            padding-bottom: 0.5rem;
-                            width: fit-content;
-
-                            border-bottom: 2px solid transparent;
-
-                            &:first-of-type {
-                                margin-bottom: 1rem;
-                            }
-
-                            &:hover {
-                                border-bottom: 2px solid white;
-                            }
-                        }
-
-                        .article__link {
-                            font-weight: 600;
-                            text-decoration: none;
-                            color: white;
-                        }
-
-                        .nothing {
-                            text-align: center;
-                            font-weight: 600;
-                            color: white;
-                        }
-                    }
-                }
-            }
+            height: 10vh;
         }
 
         &__articles {
-            margin: 0 auto;
             @include maxWidth;
-            width: 100%;
+            @include grid(repeat(3, 1fr), $columnGap: 5rem);
             padding: 5rem;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            column-gap: 5rem;
+        }
+    }
+
+    .banner {
+        &__container {
+            @include maxWidth;
+            @include flex($align: stretch);
+            width: 100%;
+            padding: 1rem 5rem;
+            overflow: hidden;
+        }
+
+        &__articles,
+        &__subjects {
+            flex: 1;
+
+            .title {
+                @include RegloBanner;
+                padding-bottom: 1rem;
+            }
+
+            .list {
+                flex: 3;
+                list-style: none;
+            }
         }
     }
 }

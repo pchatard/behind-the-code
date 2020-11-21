@@ -3,50 +3,17 @@
         <h1 class="category__title">
             {{ category.name }}
         </h1>
-        <!-- Use Banner component -->
-        <section class="category__links">
-            <div>
-                <!-- Create a component here -->
-                <div class="articles">
-                    <h2>Latest Articles</h2>
-                    <ul v-if="latestArticles.length">
-                        <li
-                            v-for="article in latestArticles"
-                            :key="article.id"
-                            class="article"
-                        >
-                            <NuxtLink
-                                :to="'/articles/' + article.id"
-                                class="article__link"
-                            >
-                                {{ article.title }}
-                            </NuxtLink>
-                        </li>
-                    </ul>
-                    <ul v-else>
-                        <li>
-                            <p class="nothing">More content coming soon!</p>
-                        </li>
-                    </ul>
-                </div>
 
-                <!-- And another one here -->
-                <div class="subjects">
-                    <h2>Subjects</h2>
-                    <ul>
-                        <li
-                            v-for="subject in category.subjects"
-                            :key="subject.id"
-                            class="subject__li"
-                            :class="{ active: subjectIds.includes(subject.id) }"
-                            @click="filterArticles(subject.id)"
-                        >
-                            {{ subject.title }}
-                        </li>
-                    </ul>
-                </div>
+        <Banner>
+            <div class="banner__container">
+                <BannerArticles :latest-articles="latestArticles" />
+                <BannerSubjects
+                    :subjects="category.subjects"
+                    :active-subject-ids="subjectIds"
+                    @filter="filterArticles"
+                />
             </div>
-        </section>
+        </Banner>
 
         <section class="category__articles">
             <ArticlePreview
@@ -60,10 +27,16 @@
 
 <script>
 import ArticlePreview from '@/components/ArticlePreview';
+import Banner from '@/components/Banner';
+import BannerArticles from '@/components/BannerArticles';
+import BannerSubjects from '@/components/BannerSubjects';
 
 export default {
     components: {
         ArticlePreview,
+        Banner,
+        BannerArticles,
+        BannerSubjects,
     },
     asyncData({ query }) {
         return {

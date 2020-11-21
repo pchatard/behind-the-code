@@ -1,0 +1,29 @@
+.banner__subjects {
+    @include flex($direction: column, $align: flex-end);
+
+    .list {
+        @include flex(flex-end, center, row, wrap);
+        width: 100%;
+        overflow: hidden;
+
+        &__item {
+            width: fit-content;
+            background-color: white;
+            box-shadow: 0 0 2px rgba(black, 0.5);
+            padding: 0.4rem 0.8rem;
+            border-radius: 5px;
+            margin: 0rem 1rem;
+            margin-bottom: 1rem;
+            border: 2px solid transparent;
+            cursor: pointer;
+
+            &:hover {
+                border: 2px solid $secondary-color;
+            }
+        }
+
+        .active {
+            border: 2px solid $secondary-color;
+        }
+    }
+}

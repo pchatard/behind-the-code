@@ -1,0 +1,19 @@
+a.link {
+    @include flex(flex-start, center);
+    padding-left: 5rem;
+    height: 15rem;
+    border: 2px solid white;
+    border-radius: 15px;
+    color: white;
+    font-size: 3rem;
+    background-image: linear-gradient(
+        45deg,
+        $secondary-color 0%,
+        $primary-color 100%
+    );
+    background-repeat: no-repeat;
+
+    &:hover {
+        box-shadow: 2px 2px 5px rgba(black, 0.2);
+    }
+}
