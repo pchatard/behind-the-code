@@ -9,7 +9,6 @@ article.article {
         }
 
         &__subjects {
-            overflow: hidden;
             @include flex($wrap: wrap);
             margin: 1rem 0;
         }

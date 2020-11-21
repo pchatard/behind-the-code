@@ -110,5 +110,17 @@ export default {
             }
         },
     },
+    head() {
+        return {
+            title: `${this.category.name} articles - Behind The Code`,
+            meta: [
+                {
+                    hid: 'description',
+                    name: 'description',
+                    content: `${this.category.description}`,
+                },
+            ],
+        };
+    },
 };
 </script>

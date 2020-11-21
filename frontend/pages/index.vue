@@ -36,5 +36,18 @@ export default {
             return this.$store.state.articles.list;
         },
     },
+    head() {
+        return {
+            title: 'Home - Behind The Code',
+            meta: [
+                {
+                    hid: 'description',
+                    name: 'description',
+                    content:
+                        'Behind The Code, explaining the core concepts behind web technologies with simple words',
+                },
+            ],
+        };
+    },
 };
 </script>

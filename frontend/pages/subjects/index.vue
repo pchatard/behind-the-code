@@ -21,5 +21,18 @@ export default {
             return this.$store.state.subjects.list;
         },
     },
+    head() {
+        return {
+            title: `Subjects - Behind The Code`,
+            meta: [
+                {
+                    hid: 'description',
+                    name: 'description',
+                    content:
+                        'Discover the subjects I am talking about in Behind The Code',
+                },
+            ],
+        };
+    },
 };
 </script>

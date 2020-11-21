@@ -2,7 +2,10 @@
     <article class="article">
         <h1 class="article__title">{{ article.title }}</h1>
         <p class="article__info">
-            Par <strong>Pierre Chatard</strong>, le {{ formatedDate }}
+            Par
+            <a href="/" target="__blank" rel="noopener noreferrer"
+                >Pierre Chatard</a
+            >, le {{ formatedDate }}
         </p>
         <div class="article__subjects">
             <SubjectLink
@@ -33,6 +36,7 @@ export default {
             id: parseInt(this.$route.params.id),
         };
     },
+
     computed: {
         article() {
             return this.$store.state.articles.list.find((art) => {
@@ -46,6 +50,18 @@ export default {
             const year = date.getFullYear();
             return `${day}/${month}/${year}`;
         },
+    },
+    head() {
+        return {
+            title: `${this.article.title} - Behind The Code`,
+            meta: [
+                {
+                    hid: 'description',
+                    name: 'description',
+                    content: `${this.article.preview}`,
+                },
+            ],
+        };
     },
 };
 </script>

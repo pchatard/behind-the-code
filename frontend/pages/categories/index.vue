@@ -23,5 +23,18 @@ export default {
             return this.$store.state.categories.list;
         },
     },
+    head() {
+        return {
+            title: `Categories - Behind The Code`,
+            meta: [
+                {
+                    hid: 'description',
+                    name: 'description',
+                    content:
+                        'Discover the categories I am talking about in Behind The Code',
+                },
+            ],
+        };
+    },
 };
 </script>
