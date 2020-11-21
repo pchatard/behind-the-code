@@ -9,7 +9,8 @@ article.article {
         }
 
         &__subjects {
-            @include flex;
+            overflow: hidden;
+            @include flex($wrap: wrap);
             margin: 1rem 0;
         }
 
@@ -39,6 +40,57 @@ article.article {
                     figcaption {
                         font-style: italic;
                     }
+                }
+            }
+        }
+    }
+}
+
+@include tablet {
+    article.article {
+        padding-right: 5rem;
+        padding-left: 5rem;
+
+        .article {
+            &__title {
+                font-size: 4rem;
+            }
+
+            &__content {
+                margin-top: 3rem;
+                padding-left: 3rem;
+                padding-right: 3rem;
+
+                .content {
+                    width: 62%;
+
+                    figure {
+                        img {
+                            width: 90%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include mobile {
+    article.article {
+        padding-right: 2rem;
+        padding-left: 2rem;
+
+        .article {
+            &__title {
+                font-size: 3rem;
+            }
+
+            &__content {
+                flex-direction: column;
+                padding: 1rem;
+
+                .content {
+                    width: 100%;
                 }
             }
         }

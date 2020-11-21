@@ -23,3 +23,31 @@
         }
     }
 }
+
+@include tablet {
+    .resources {
+        width: 33%;
+        padding: 1rem;
+
+        &__title {
+            font-size: 1.6rem;
+        }
+
+        &__list__item {
+            font-size: 1.4rem;
+        }
+    }
+}
+
+@include mobile {
+    .resources {
+        margin: 0 auto;
+        width: 90%;
+        height: auto;
+        position: static;
+
+        &__list__item {
+            padding-left: 1rem;
+        }
+    }
+}

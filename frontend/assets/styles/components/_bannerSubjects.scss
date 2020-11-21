@@ -28,6 +28,18 @@
     }
 }
 
+@include tablet {
+    .banner__subjects {
+        .list__item:hover {
+            border: 2px solid transparent;
+        }
+
+        .list__item.active {
+            border: 2px solid $secondary-color;
+        }
+    }
+}
+
 @include mobile {
     .banner__subjects {
         align-items: flex-start;
