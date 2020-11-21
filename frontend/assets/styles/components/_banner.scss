@@ -7,3 +7,9 @@
         $primary-color 100%
     );
 }
+
+@include tablet {
+    .banner {
+        padding: 2rem 0;
+    }
+}
