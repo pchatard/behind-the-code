@@ -17,3 +17,10 @@ a.link {
         box-shadow: 2px 2px 5px rgba(black, 0.2);
     }
 }
+
+@include mobile {
+    a.link {
+        height: 10rem;
+        padding-left: 3rem;
+    }
+}

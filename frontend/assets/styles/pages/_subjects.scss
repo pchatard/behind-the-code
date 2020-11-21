@@ -15,3 +15,25 @@ main.subjects {
         }
     }
 }
+
+@include tablet {
+    main.subjects {
+        .subjects {
+            &__list {
+                width: 50%;
+                grid-template-columns: auto;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+
+@include mobile {
+    main.subjects {
+        .subjects {
+            &__list {
+                width: 100%;
+            }
+        }
+    }
+}
