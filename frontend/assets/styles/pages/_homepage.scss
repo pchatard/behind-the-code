@@ -1,5 +1,5 @@
 main.home {
-    @include pageSetup(1rem);
+    @include pageSetup($marginTop: 1rem);
     text-align: center;
 
     .subtitle {

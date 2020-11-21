@@ -19,7 +19,7 @@
             transform: translateY(0) rotate(0);
             background-color: $primary-color;
             box-shadow: 0 0 2px rgba(black, 0.2);
-            transition: all 0.5s;
+            transition: all 0.2s;
 
             &:first-of-type {
                 margin-bottom: 0.7rem;
@@ -49,8 +49,11 @@
     }
 }
 
-@media screen and (max-width: 900px) {
+@include tablet {
     .hamburger {
+        z-index: 15;
         display: block;
+        position: fixed;
+        right: 3rem;
     }
 }

@@ -6,19 +6,19 @@
             </NuxtLink>
 
             <nav v-show="showNavbar" class="header__navbar">
-                <!-- <form>
-                    <input id="search" type="search" />
-                    <button type="submit">Search</button>
-                </form> -->
                 <ul>
-                    <li v-for="category in categories" :key="category.id">
+                    <li
+                        v-for="category in categories"
+                        :key="category.id"
+                        @click="toggleNavbar"
+                    >
                         <NuxtLink :to="'/categories/' + category.id">
                             {{ category.name }}
                         </NuxtLink>
                     </li>
                 </ul>
             </nav>
-            <Hamburger @hamburger="toggleNavbar" />
+            <Hamburger :checked="showNavbar" @hamburger="toggleNavbar" />
         </div>
     </header>
 </template>
@@ -31,6 +31,7 @@ export default {
     data() {
         return {
             showNavbar: false,
+            isMobileView: false,
         };
     },
     mounted() {
@@ -39,10 +40,13 @@ export default {
     },
     methods: {
         initializeNavbar() {
-            this.showNavbar = window.innerWidth >= 900;
+            this.isMobileView = window.innerWidth <= 900;
+            this.showNavbar = !this.isMobileView;
         },
         toggleNavbar() {
-            this.showNavbar = !this.showNavbar;
+            if (this.isMobileView) {
+                this.showNavbar = !this.showNavbar;
+            }
         },
     },
 };

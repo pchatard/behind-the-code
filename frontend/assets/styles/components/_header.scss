@@ -6,6 +6,7 @@
     top: 0;
     left: 0;
     background-color: white;
+    box-shadow: 0 0 5px rgba($primary-color, 0.5);
 
     &__container {
         @include maxWidth;
@@ -15,7 +16,7 @@
     }
 
     &__logo {
-        width: 15%;
+        width: 20%;
 
         img {
             width: 100%;
@@ -41,6 +42,57 @@
 
                 .nuxt-link-exact-active {
                     color: $primary-color;
+                }
+            }
+        }
+    }
+}
+
+@include tablet {
+    .header {
+        &__container {
+            justify-content: center;
+        }
+
+        &__logo {
+            width: 30%;
+            z-index: 10;
+        }
+
+        &__navbar {
+            z-index: 8;
+            background-color: white;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100vh;
+            align-self: flex-start;
+            justify-content: center;
+
+            ul {
+                flex-direction: column;
+
+                li {
+                    margin: 3rem 0;
+                    font-size: 2.5rem;
+                }
+            }
+        }
+    }
+}
+
+@include mobile {
+    .header {
+        &__logo {
+            width: 40%;
+        }
+
+        &__navbar {
+            ul {
+                li {
+                    margin: 3rem 0;
                 }
             }
         }
