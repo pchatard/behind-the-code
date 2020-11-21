@@ -9,7 +9,7 @@ main.category {
 
         &__articles {
             @include maxWidth;
-            @include grid(repeat(3, 1fr), $columnGap: 5rem);
+            @include grid(repeat(3, 1fr), $columnGap: 5rem, $rowGap: 5rem);
             padding: 5rem;
         }
     }
@@ -35,6 +35,36 @@ main.category {
             .list {
                 flex: 3;
                 list-style: none;
+            }
+        }
+    }
+}
+
+@include tablet {
+    main.category {
+        .category {
+            &__articles {
+                grid-template-columns: repeat(2, 1fr);
+                column-gap: 2.5rem;
+            }
+        }
+    }
+}
+
+@include mobile {
+    main.category {
+        .category {
+            &__articles {
+                padding: 2rem;
+                grid-template-columns: auto;
+                row-gap: 2.5rem;
+            }
+        }
+
+        .banner {
+            &__container {
+                flex-direction: column;
+                padding: 1rem 3rem;
             }
         }
     }

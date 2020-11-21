@@ -28,3 +28,13 @@
         }
     }
 }
+
+@include mobile {
+    .banner__articles {
+        margin-bottom: 1rem;
+
+        .list {
+            width: 100%;
+        }
+    }
+}

@@ -27,3 +27,19 @@
         }
     }
 }
+
+@include mobile {
+    .banner__subjects {
+        align-items: flex-start;
+
+        .list {
+            justify-content: flex-start;
+
+            &__item {
+                font-size: 1.4rem;
+                margin-right: 1rem;
+                margin-left: 0;
+            }
+        }
+    }
+}
