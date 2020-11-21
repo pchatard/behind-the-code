@@ -1,0 +1,23 @@
+.footer {
+    padding: 3rem 0;
+    box-shadow: 0 0 2px rgba($primary-color, 0.8);
+    @include flex(center, center, column);
+
+    a {
+        color: rgba($primary-color, 0.8);
+        margin: 0 0.5rem;
+        img {
+            width: 4rem;
+            height: 4rem;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+    }
+
+    .author {
+        margin: 0;
+    }
+    .social-links {
+        margin-bottom: 1rem;
+    }
+}
