@@ -1,6 +1,6 @@
 <template>
     <aside class="resources">
-        <h4 class="resources__title">Sources and useful links</h4>
+        <h4 class="resources__title">Sources et liens utiles</h4>
         <ol class="resources__list">
             <li
                 v-for="resource in resources"

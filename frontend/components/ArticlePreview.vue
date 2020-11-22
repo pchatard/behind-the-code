@@ -19,7 +19,7 @@
         <p class="preview__text">
             {{ article.preview || 'Preview coming soon...' }}
         </p>
-        <ButtonLink :to="'/articles/' + article.id"> Read </ButtonLink>
+        <ButtonLink :to="'/articles/' + article.id"> Lire </ButtonLink>
     </div>
 </template>
 

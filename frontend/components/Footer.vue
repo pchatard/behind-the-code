@@ -24,7 +24,7 @@
         </div>
         <p class="copyright">Behind The Code © {{ year }}</p>
         <p>
-            All rights reserved. Created by
+            Tous droits réservés. Créé par
             <a
                 href="http://"
                 target="_blank"

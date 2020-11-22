@@ -1,6 +1,6 @@
 <template>
     <div class="banner__subjects">
-        <h2 class="title">Subjects</h2>
+        <h2 class="title">Thèmes</h2>
         <ul class="list">
             <li
                 v-for="subject in subjects"

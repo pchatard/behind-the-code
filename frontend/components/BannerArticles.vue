@@ -1,6 +1,6 @@
 <template>
     <div class="banner__articles">
-        <h2 class="title">Latest Articles</h2>
+        <h2 class="title">Derniers articles</h2>
         <ul v-if="latestArticles.length" class="list">
             <li
                 v-for="article in latestArticles"
@@ -14,7 +14,7 @@
         </ul>
         <ul v-else class="list">
             <li>
-                <p class="empty">More content coming soon!</p>
+                <p class="empty">Plus de contenu arrive bientôt !</p>
             </li>
         </ul>
     </div>

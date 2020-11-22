@@ -1,6 +1,6 @@
 <template>
     <main class="categories">
-        <h1 class="categories__title">Categories</h1>
+        <h1 class="categories__title">Catégories</h1>
         <div class="categories__list">
             <CategoryLink
                 v-for="category in categories"
@@ -25,13 +25,13 @@ export default {
     },
     head() {
         return {
-            title: `Categories - Behind The Code`,
+            title: `Catégories - Behind The Code`,
             meta: [
                 {
                     hid: 'description',
                     name: 'description',
                     content:
-                        'Discover the categories I am talking about in Behind The Code',
+                        "Découvrez les catégories sur lesquelles j'écris sur Behind The Code.",
                 },
             ],
         };

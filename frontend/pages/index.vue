@@ -1,16 +1,16 @@
 <template>
     <main class="home">
-        <h2 class="subtitle">Welcome to</h2>
+        <h2 class="subtitle">Bienvenue sur</h2>
         <h1 class="title">behind the code</h1>
 
         <Banner>
-            <span class="banner__title">Browse articles by</span>
+            <span class="banner__title">Découvrir les articles par</span>
             <div class="banner__container">
                 <NuxtLink to="/categories" class="banner__link">
-                    Category
+                    Catégories
                 </NuxtLink>
                 <NuxtLink to="/subjects" class="banner__link">
-                    Subject
+                    Thèmes
                 </NuxtLink>
             </div>
         </Banner>
@@ -38,13 +38,13 @@ export default {
     },
     head() {
         return {
-            title: 'Home - Behind The Code',
+            title: 'Accueil - Behind The Code',
             meta: [
                 {
                     hid: 'description',
                     name: 'description',
                     content:
-                        'Behind The Code, explaining the core concepts behind web technologies with simple words',
+                        'Behind The Code explore, explique et vulgarise les concepts clés derrière les technologies utilisées en développement web, avec des mots simples.',
                 },
             ],
         };

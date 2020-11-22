@@ -1,6 +1,6 @@
 <template>
     <main class="subjects">
-        <h1 class="subjects__title">Subjects</h1>
+        <h1 class="subjects__title">Thèmes</h1>
         <div class="subjects__list">
             <SubjectListLink
                 v-for="subject in subjects"
@@ -23,13 +23,13 @@ export default {
     },
     head() {
         return {
-            title: `Subjects - Behind The Code`,
+            title: `Thèmes - Behind The Code`,
             meta: [
                 {
                     hid: 'description',
                     name: 'description',
                     content:
-                        'Discover the subjects I am talking about in Behind The Code',
+                        "Découvrez les thèmes sur lesquels j'écris sur Behind The Code.",
                 },
             ],
         };
