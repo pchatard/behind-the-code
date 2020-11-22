@@ -1,0 +1,29 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    box-sizing: inherit;
+}
+
+a,
+a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+button {
+    border: none;
+    background: none;
+    font-size: inherit;
+    color: inherit;
+}
+
+.default__layout {
+    position: relative;
+}

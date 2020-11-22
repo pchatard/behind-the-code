@@ -1,0 +1,31 @@
+.error {
+    min-height: calc(100vh - 16rem);
+    padding-top: 8rem;
+    @include flex(center, center, column);
+
+    h1 {
+        width: 80%;
+        text-align: center;
+    }
+
+    a {
+        margin: 2rem;
+        padding: 1.6rem 3.2rem;
+        color: white;
+        font-size: 2rem;
+        background: linear-gradient(
+            45deg,
+            $primary-color 0%,
+            $secondary-color 100%
+        );
+        border-radius: 5px;
+    }
+}
+
+@include mobile {
+    .error {
+        a {
+            font-size: 1.6rem;
+        }
+    }
+}

@@ -1,0 +1,45 @@
+main.categories {
+    @include pageSetup($paddingSide: 5rem);
+    @include maxWidth;
+    font-family: 'Cunia';
+
+    .categories {
+        &__title {
+            @include flex(center, center);
+            width: 100%;
+            height: 15vh;
+            margin-bottom: 5rem;
+        }
+
+        &__list {
+            @include grid(repeat(3, 1fr), $rowGap: 10rem, $columnGap: 10rem);
+        }
+    }
+}
+
+@include tablet {
+    main.categories {
+        .categories {
+            &__list {
+                width: 50%;
+                grid-template-columns: auto;
+                row-gap: 5rem;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+
+@include mobile {
+    main.categories {
+        .categories {
+            &__title {
+                margin-bottom: 0;
+            }
+
+            &__list {
+                width: 100%;
+            }
+        }
+    }
+}
