@@ -1,9 +1,9 @@
 <template>
     <footer class="footer">
         <div class="social-links">
-            <a href="/" target="_blank" rel="noopener noreferrer">
+            <!-- <a href="/" target="_blank" rel="noopener noreferrer">
                 <img src="~assets/profile.jpg" alt="" />
-            </a>
+            </a> -->
             <a
                 href="https://www.github.com/pchatard"
                 target="_blank"
@@ -11,9 +11,9 @@
             >
                 <img src="~assets/github.png" alt="GitHub logo" />
             </a>
-            <a href="/" target="_blank" rel="noopener noreferrer">
+            <!-- <a href="/" target="_blank" rel="noopener noreferrer">
                 <img src="~assets/linkedin.png" alt="LinkedIn logo" />
-            </a>
+            </a> -->
             <a
                 href="https://twitter.com/pierre_codes"
                 target="_blank"
