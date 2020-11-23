@@ -4,7 +4,8 @@ main.category {
     .category {
         &__title {
             @include flex(center, center);
-            height: 10vh;
+            height: 15vh;
+            text-align: center;
         }
 
         &__articles {
