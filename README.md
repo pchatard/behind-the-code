@@ -1,6 +1,20 @@
-# Behind The Code
+# frontend
 
-Behind The Code is my first personal project.
-I am building a blog where I'll document my journey in learning web development and starting my career.
+## Build Setup
 
-It is built with NuxtJS and Strapi.
+```bash
+# install dependencies
+$ npm install
+
+# serve with hot reload at localhost:3000
+$ npm run dev
+
+# build for production and launch server
+$ npm run build
+$ npm run start
+
+# generate static project
+$ npm run generate
+```
+
+For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
