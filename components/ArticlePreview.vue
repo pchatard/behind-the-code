@@ -2,7 +2,7 @@
     <div class="preview">
         <img
             v-show="article.image"
-            :src="formatedImageUrl"
+            :src="article.image.formats.small.url"
             alt="article image"
             class="preview__img"
         />
@@ -36,17 +36,6 @@ export default {
         article: {
             default: () => ({}),
             type: Object,
-        },
-    },
-    computed: {
-        formatedImageUrl() {
-            if (this.article.image) {
-                return (
-                    process.env.strapiBaseUrl +
-                    this.article.image.formats.small.url
-                );
-            }
-            return null;
         },
     },
 };

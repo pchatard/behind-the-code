@@ -49,7 +49,7 @@ export default {
 
     markdownit: {
         preset: 'commonmark',
-        linkify: false,
+        linkify: true,
         breaks: true,
         injected: true,
     },
