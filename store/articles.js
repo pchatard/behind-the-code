@@ -7,7 +7,11 @@ const actions = {
         const articles = await this.$axios.$get(
             '/articles?_sort=published_at:DESC'
         );
-        commit('populateArticles', await articles);
+        const newArticles = await articles.map((article) => ({
+            ...article,
+            content: this.$md.render(article.content),
+        }));
+        commit('populateArticles', newArticles);
     },
 };
 const mutations = {
