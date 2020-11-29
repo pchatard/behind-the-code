@@ -1,12 +1,7 @@
 <template>
     <article class="article">
         <h1 class="article__title">{{ article.title }}</h1>
-        <p class="article__info">
-            Par
-            <a href="/" target="__blank" rel="noopener noreferrer"
-                >Pierre Chatard</a
-            >, le {{ formatedDate }}
-        </p>
+        <p class="article__info">Par Pierre Chatard, le {{ formatedDate }}</p>
         <div class="article__subjects">
             <SubjectLink
                 v-for="subject in article.subjects"
@@ -46,7 +41,7 @@ export default {
         formatedDate() {
             const date = new Date(this.article.published_at);
             const day = date.getDate();
-            const month = date.getMonth();
+            const month = date.getMonth() + 1;
             const year = date.getFullYear();
             return `${day}/${month}/${year}`;
         },

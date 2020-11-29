@@ -2,6 +2,7 @@ article.article {
     @include pageSetup($paddingSide: 15rem);
     @include maxWidth;
     position: relative;
+    padding-bottom: 2rem;
 
     .article {
         &__title {
@@ -15,15 +16,31 @@ article.article {
 
         &__content {
             @include flex(space-between);
-            margin-top: 5rem;
+            margin-top: 3rem;
 
             .content {
                 width: 70%;
 
+                h3 {
+                    margin: 2rem 0;
+                }
+
                 p {
                     text-align: justify;
                     line-height: 2rem;
-                    margin-bottom: 3rem;
+                    margin-bottom: 1.5rem;
+                }
+
+                blockquote {
+                    background-color: rgb(228, 227, 227);
+                    font-style: italic;
+                    padding: 1.5rem 0;
+                    margin-bottom: 1.5rem;
+
+                    p {
+                        padding-left: 2rem;
+                        margin: 0;
+                    }
                 }
 
                 figure {
