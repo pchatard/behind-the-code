@@ -33,7 +33,13 @@ export default {
     components: { ArticlePreview, Banner },
     computed: {
         articles() {
-            return this.$store.state.articles.list;
+            if (process.env.NODE_ENV === 'development') {
+                return this.$store.state.articles.list;
+            } else {
+                return this.$store.state.articles.list.filter(
+                    (article) => article.public
+                );
+            }
         },
     },
     head() {
